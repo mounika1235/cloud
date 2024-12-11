@@ -1,0 +1,45 @@
+<?php
+// Start the session
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    // If not logged in, redirect to login page
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Online Attendance Management System</title>
+    <link rel="stylesheet" href="/styles2.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h1>Online Attendance Management System</h1>
+        </div>
+        <div class="menu">
+            <a href="#">Create Users</a>
+            <a href="#">Add Data</a>
+            <a href="/logout.php">Logout</a> <!-- Link to Logout -->
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Are you sure you want to logout?</h2>
+        <p>Click "Logout" to end your session, or "Cancel" to return to the system.</p>
+        <div class="logout-actions">
+            <form action="logout_action.php" method="POST">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+            <a href="index.php" class="cancel-button">Cancel</a>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Report</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cloud Based Attendance Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/students.html">Students</a></li>
+                <li><a href="/faculties.html">Faculties</a></li>
+                <li><a href="/attendence.html">Attendance</a></li>
+                <li><a href="/report.html">Report</a></li>
+                <li><a href="/logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Attendance Report</h2>
+        <form id="report-form">
+            <label for="batch">Batch:</label>
+            <input type="text" id="batch" name="batch" placeholder="Enter batch" required><br>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" placeholder="Enter department" required><br>
+
+            <label for="semester">Semester:</label>
+            <input type="text" id="semester" name="semester" placeholder="Enter semester" required><br>
+
+            <button type="submit">Generate Report</button>
+        </form>
+
+        <section id="report-section">
+            <h3>Generated Report</h3>
+            <table id="report-table" border="1">
+                <thead>
+                    <tr>
+                        <th>Batch</th>
+                        <th>Department</th>
+                        <th>Semester</th>
+                        <th>Subject</th>
+                        <th>Registration Number</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Report data will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        // Placeholder script for handling report generation
+        document.getElementById('report-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const batch = document.getElementById('batch').value;
+            const department = document.getElementById('department').value;
+            const semester = document.getElementById('semester').value;
+
+            // Logic for fetching and displaying report data can go here
+            alert(`Generating report for Batch: ${batch}, Department: ${department}, Semester: ${semester}`);
+        });
+    </script>
+</body>
+</html>
